@@ -1,9 +1,9 @@
-package OOPConcepts;
+package OOPConcepts.Book;
 
 public class Book {
 
     private int noOfCopies;
-    Book(int noOfCopies){
+    public Book(int noOfCopies){
         this.noOfCopies = noOfCopies;
     }
     public int getNoOfCopies() {
