@@ -1,10 +1,15 @@
-package Inheritance;
+package Inheritance.Student;
 
 public class Person {
 
     private String name;
     private String email;
     private String phoneNumber;
+
+    public void Person(){
+        System.out.println("This is Person class");
+    }
+
 
     public String getName() {
         return name;

@@ -1,6 +1,6 @@
 package Arrays;
 
-import Arrays.Students.Student;
+import ArrayList.Students.Student;
 
 public class StudentRunner {
     public static void main(String []args){

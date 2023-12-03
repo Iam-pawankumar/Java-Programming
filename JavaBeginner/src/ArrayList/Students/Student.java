@@ -8,6 +8,7 @@ import java.util.Collections;
 
 public class Student {
 
+    public void Student(){}
     private String studentName;
     private ArrayList<Integer> marksList = new ArrayList<Integer>() ;
 

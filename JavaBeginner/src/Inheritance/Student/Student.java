@@ -1,9 +1,12 @@
-package Inheritance;
+package Inheritance.Student;
 
 public class Student extends Person{
 
     private String college;
     private String studies;
+    public void Student(){
+        System.out.println("This is Student clss");
+    }
 
     public String getCollege() {
         return college;
