@@ -1,4 +1,8 @@
-package FrescoPlayChallenges.Abstraction;
+package FrescoPlayChallenges;
+
+import FrescoPlayChallenges.Abstraction.SelfFinance;
+import FrescoPlayChallenges.Abstraction.Aided;
+import FrescoPlayChallenges.Abstraction.Student;
 
 import org.junit.Before;
 import org.junit.Test;
