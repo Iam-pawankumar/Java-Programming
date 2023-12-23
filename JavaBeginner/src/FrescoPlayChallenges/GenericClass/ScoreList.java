@@ -1,11 +1,20 @@
 package FrescoPlayChallenges.GenericClass;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ScoreList<T extends Number> {
-    private List<T> list = new ArrayList<>();
+    private ArrayList<T> list = new ArrayList<>();
 
+    public void setScores(String scores) {
+        for (String score : scores.split("\\s+")) {
+            try {
+                Double parsedScore = Double.parseDouble(score);
+                this.list.add((T) parsedScore);
+            } catch (NumberFormatException e) {
+                System.err.println("Invalid score: " + score);
+            }
+        }
+    }
     public void addElement(T element) {
         list.add(element);
     }
@@ -16,6 +25,16 @@ public class ScoreList<T extends Number> {
 
     public T getElement(int index) {
         return list.get(index);
+    }
+
+    public int thresholdScore(int threshold) {
+        int count = 0;
+        for (T score : this.list) {
+            if (score.doubleValue() >= Double.valueOf(threshold)) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public double averageValues() {
@@ -29,5 +48,9 @@ public class ScoreList<T extends Number> {
         }
 
         return sum / list.size();
+    }
+
+    public double averageCGPAValues() {
+        return averageValues();
     }
 }

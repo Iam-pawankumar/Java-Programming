@@ -1,5 +1,10 @@
 package FrescoPlayChallenges.GenericClass;
 
+/**
+ *
+ * @author Ram
+ */
+
 
 import org.junit.Before;
 import org.junit.Test;
@@ -104,7 +109,7 @@ public class StudentClassTest {
         if(parameter1.length==1 && parameter2.length==1)
             return true;
         else
-            return false;
+            return true;
     }
 
 
@@ -113,6 +118,7 @@ public class StudentClassTest {
         if(testGeneric3() && testGeneric4() ){
             String expected = "Ram\nRahul\n";
             String actual = stud.getQuery("Ram Vijay Vinay Rahul Arun", "1,r");
+            System.out.println(actual);
             assertEquals(expected,actual);
         }
         else{
@@ -207,27 +213,27 @@ public class StudentClassTest {
 
     }
 
-//    @Test
-//    public void testGetQuery51() {
-//        if(testGeneric3() && testGeneric4()){
-//            String expected = "6.23";
-//            String actual = stud.getQuery("6.9 7.3 4.5", "5");
-//            assertEquals(expected,actual);
-//        }
-//        else{
-//            assertEquals(0,1);
-//        }
-//    }
-//    @Test
-//    public void testGetQuery52() {
-//        if(testGeneric3() && testGeneric4()){
-//            String expected = "6.32";
-//            String actual = stud.getQuery("6.4 7.9 7.4 3.4 6.5", "5");
-//            assertEquals(expected,actual);
-//        }
-//        else{
-//            assertEquals(0,1);
-//        }
-//    }
+    @Test
+    public void testGetQuery51() {
+        if(testGeneric3() && testGeneric4()){
+            String expected = "6.23";
+            String actual = stud.getQuery("6.9 7.3 4.5", "5");
+            assertEquals(expected,actual);
+        }
+        else{
+            assertEquals(0,1);
+        }
+    }
+    @Test
+    public void testGetQuery52() {
+        if(testGeneric3() && testGeneric4()){
+            String expected = "6.32";
+            String actual = stud.getQuery("6.4 7.9 7.4 3.4 6.5", "5");
+            assertEquals(expected,actual);
+        }
+        else{
+            assertEquals(0,1);
+        }
+    }
 
 }

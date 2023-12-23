@@ -1,15 +1,17 @@
 package FrescoPlayChallenges.GenericClass;
 
 import java.util.ArrayList;
-import java.util.List;
 
-class StudentList<T extends String> {
-    private List<T> list = new ArrayList<>();
+public class StudentList<T extends String> {
+    private ArrayList<T> list = new ArrayList<>();
 
-    public void addElement(String name) {
-        this.list.add((T) name);
+    public void setStudentData(String studentData) {
+        for (T name : (T[]) studentData.split("\\s+")) {
+            this.list.add(name);
+        }
     }
 
+    public void addElement(T element){ this.list.add(element);}
     public void removeElement(T element) {
         this.list.remove(element);
     }
@@ -22,31 +24,25 @@ class StudentList<T extends String> {
         String res = "";
         for (T name : this.list) {
             if (name.toString().startsWith(letter)) {
-                res += name;
+                res += name + "\n";
             }
-            res += "\n";
         }
         return res;
     }
 
-    public void bloodGroupOf(String[] studentBloodGroups, String bloodGroupToFind) {
+    public String bloodGroupOf(String[] studentBloodGroups, String bloodGroupToFind) {
+        String students = "";
         for (int i = 0; i < this.list.size(); i++) {
             String studentName = this.list.get(i);
             String studentBloodGroup = studentBloodGroups[i];
             if (studentBloodGroup.equals(bloodGroupToFind)) {
-                System.out.println(studentName);
+                students += studentName + "\n";
             }
         }
-        System.out.println();
+        return students;
     }
 
-    public int thresholdScore(int threshold) {
-        int count = 0;
-        for (String score : this.list) {
-            if (Integer.parseInt(score) > threshold) {
-                count++;
-            }
-        }
-        return count;
+    public int thresholdScore() {
+        return 0;
     }
 }
