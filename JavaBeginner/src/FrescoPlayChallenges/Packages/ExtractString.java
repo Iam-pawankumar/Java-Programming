@@ -11,8 +11,20 @@ public class ExtractString{
 
     NumberFinder numberFinder = new NumberFinder();
 
-    public String getInput(String conversation) {
-        return this.secretCodeExctracter(conversation);
+    public String getInput(String conv) {
+
+        String conversation = stringFilter(conv);
+
+        int sumWordNums = 0;
+        for(String word: conversation.split("\\s+")){
+            if(isDigit(word) && numberFinder.isKeithNumber(Integer.parseInt(word)) && !numberFinder.isPrime(word)){
+                this.secretCode += word;
+            }else if(convertSpelledNumberToInteger(word) != -1){
+                sumWordNums += convertSpelledNumberToInteger(word);
+            }
+        }
+        this.secretCode += sumWordNums;
+        return this.secretCode;
     }
 
     private boolean isDigit(String s){
@@ -37,22 +49,6 @@ public class ExtractString{
         Map<String, Integer> numberWordsMap = createNumberWordsMap();
         String cleanedWord = spelledNumber.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
         return numberWordsMap.getOrDefault(cleanedWord, -1);
-    }
-
-    public String secretCodeExctracter(String cnv){
-
-        String conversation = stringFilter(cnv);
-
-        int sumWordNums = 0;
-        for(String word: conversation.split("\\s+")){
-            if(isDigit(word) && numberFinder.isKeithNumber(Integer.parseInt(word)) && !numberFinder.isPrime(word)){
-                this.secretCode += word;
-            }else if(convertSpelledNumberToInteger(word) != -1){
-                sumWordNums += convertSpelledNumberToInteger(word);
-            }
-        }
-        this.secretCode += sumWordNums;
-        return this.secretCode;
     }
 
     private static Map<String, Integer> createNumberWordsMap() {
