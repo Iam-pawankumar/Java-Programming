@@ -53,6 +53,7 @@ public class ExtractString{
 
     private static Map<String, Integer> createNumberWordsMap() {
         Map<String, Integer> map = new HashMap<>();
+        map.put("zero", 0);
         map.put("one", 1);
         map.put("two", 2);
         map.put("three", 3);
@@ -62,17 +63,6 @@ public class ExtractString{
         map.put("seven", 7);
         map.put("eight", 8);
         map.put("nine", 9);
-        map.put("ten", 10);
-        map.put("eleven", 11);
-        map.put("twelve", 12);
-        map.put("thirteen", 13);
-        map.put("fourteen", 14);
-        map.put("fifteen", 15);
-        map.put("sixteen", 16);
-        map.put("seventeen", 17);
-        map.put("eighteen", 18);
-        map.put("nineteen", 19);
-        map.put("twenty", 20);
         return map;
     }
 
