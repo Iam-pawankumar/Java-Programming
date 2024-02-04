@@ -1,7 +1,14 @@
 package _2DFigures;
 
 public class Square {
-    public void printSquare(int n){
+
+    private int n;
+
+    public Square(int num) {
+        this.n = num;
+    }
+
+    public void printSquare(){
         if (n >= 2){
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < n; j++) {
@@ -14,7 +21,7 @@ public class Square {
                 System.out.println();
             }
         }else {
-            System.out.printf("Square cannot be printed with %d X %d Matrix", n,n).println();
+            System.out.printf("Square cannot be printed with %d X %d Matrix", n, n).println();
         }
     }
 }

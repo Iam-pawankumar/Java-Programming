@@ -3,14 +3,13 @@ package ArrayList.Students;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class Student {
 
     public void Student(){}
     private String studentName;
-    private ArrayList<Integer> marksList = new ArrayList<Integer>() ;
+    private ArrayList<Integer> marksList = new ArrayList<>() ;
 
     public Student(String studentName, int... marks) {
         this.studentName = studentName;
