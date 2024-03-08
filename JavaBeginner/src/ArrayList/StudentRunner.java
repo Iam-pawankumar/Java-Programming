@@ -2,9 +2,6 @@ package ArrayList;
 
 import ArrayList.Students.Student;
 
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-
 public class StudentRunner {
     public static void main(String []args){
         Student student = new Student("Chinna", 98, 97, 100);

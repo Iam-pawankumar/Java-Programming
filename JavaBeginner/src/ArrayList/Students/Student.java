@@ -55,4 +55,15 @@ public class Student {
         this.marksList.add(mark);
     }
 
+    public int removeDuplicates(int[] nums) {
+        ArrayList<Integer> uniqueNums = new ArrayList<>();
+        uniqueNums.add(nums[0]);
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[i-1]) {
+                uniqueNums.add(nums[i]);
+            }
+        }
+        return uniqueNums.size();
+    }
+
 }
